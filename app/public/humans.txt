@@ -1,0 +1,27 @@
+/* http://humanstxt.org/ */
+
+
+ ____  _       _          ______           _
+|  _ \| |     | |        |  ____|         | |
+| |_) | | __ _| | _____  | |__   _ __ ___ | |__  _ __ ___ _   _
+|  _ <| |/ _` | |/ / _ \ |  __| | '_ ` _ \| '_ \| '__/ _ \ | | |
+| |_) | | (_| |   <  __/ | |____| | | | | | |_) | | |  __/ |_| |
+|____/|_|\__,_|_|\_\___| |______|_| |_| |_|_.__/|_|  \___|\__, |
+                                                           __/ |
+                                                          |___/
+
+
+/* TEAM */
+
+	Creator: Blake Embrey
+	Contact: hello (at) blakeembrey.com
+	Twitter: @blakeembrey
+	From: Brisbane, Queensland, Australia
+
+
+/* SITE */
+
+	Last Updated: 2012/03/31
+	Languages: English
+	Standards: HTML5, CSS3
+	Software: Sublime Text 2, Git

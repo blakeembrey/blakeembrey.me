@@ -1,0 +1,28 @@
+{
+  "name": "blakeembrey.me",
+  "subdomain": "blakeembrey",
+  "domains": [
+    "www.blakeembrey.com",
+    "www.blakeembrey.me",
+    "blakeembrey.com",
+    "blakeembrey.me"
+  ],
+  "scripts": {
+    "predeploy": "grunt",
+    "start": "node app"
+  },
+  "version": "2.0.4",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "dependencies": {
+    "express": "~3.0.0rc2"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0a",
+    "grunt-contrib-copy": "~0.3.2",
+    "grunt-contrib-htmlmin": "~0.1.0",
+    "grunt": "~0.4.0rc2",
+    "grunt-contrib-mincss": "~0.3.2"
+  }
+}
