@@ -32,34 +32,38 @@ h1 {
   line-height: 1;
   font-weight: bold;
 
-  text-rendering: optimizeLegibility;
-  text-transform: lowercase;
-
-  display: inline-block;
+  display: block;
   margin: 0;
   padding: 0 0 30px;
 
   border-bottom: 1px dotted #BBB;
 }
 
+/* Was doing a hide/show on hover approach - but it was a bit annoying */
+h1 i {
+  display: none;
+}
+
 h1 span {
   color: #000;
+  display: block;
 }
 
 p {
-  margin: 0;
+  margin: 30px 0;
   font-size: 1.65em;
+  line-height: 1.8;
 }
 
 a {
   display: inline-block;
   position: relative;
 
-  margin: 30px 0;
   color: #000;
-
   text-transform: lowercase;
   text-decoration: none;
+
+  width: 100%;
 
   -webkit-transition: all .3s linear;
   -moz-transition: all .3s linear;
@@ -68,15 +72,12 @@ a {
   transition: all .3s linear;
 }
 
-a:before,
-a:after {
+a:after,
+a:before {
+  content: "{";
   color: #000;
   opacity: 0;
   padding: 0 1px;
-}
-
-a:before {
-  content: "{";
 }
 
 a:after {
@@ -87,7 +88,22 @@ a:hover {
   color: #f20f20;
 }
 
-a:hover:before,
-a:hover:after {
+a:hover:after,
+a:hover:before {
   opacity: 1;
+}
+
+/* Desktop view overrides */
+@media (min-width: 30em) {
+  h1 {
+    display: inline-block;
+  }
+
+  h1 span {
+    display: inline;
+  }
+
+  a {
+    width: auto;
+  }
 }

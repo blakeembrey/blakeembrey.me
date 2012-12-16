@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     },
 
     mincss: {
-      compress: {
+      dist: {
         files: {
           'dist/public/css/main.css': 'dist/public/css/main.css'
         }

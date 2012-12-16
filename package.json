@@ -11,7 +11,7 @@
     "predeploy": "grunt",
     "start": "node app"
   },
-  "version": "2.0.4",
+  "version": "2.0.4-1",
   "engines": {
     "node": "0.8.x"
   },
