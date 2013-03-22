@@ -9,19 +9,19 @@ body {
 
 html {
   font-size: 100%;
-  background: #edf0f2;
   font-family: "Droid Serif", "Myriad Pro", "Georgia", serif;
 }
 
 body {
   display: table;
-  background: transparent;
+  background-color: #edf0f2;
 }
 
 .masterpiece {
   display: table-cell;
   padding: 0 10px;
   text-align: center;
+  /* Full shadow around each letter */
   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;
   vertical-align: middle;
 }
@@ -34,14 +34,9 @@ h1 {
 
   display: block;
   margin: 0;
-  padding: 0 0 30px;
+  padding: 30px 0;
 
   border-bottom: 1px dotted #BBB;
-}
-
-/* Was doing a hide/show on hover approach - but it was a bit annoying */
-h1 i {
-  display: none;
 }
 
 h1 span {
@@ -65,11 +60,11 @@ a {
 
   width: 100%;
 
-  -webkit-transition: all .3s linear;
-  -moz-transition: all .3s linear;
-  -ms-transition: all .3s linear;
-  -o-transition: all .3s linear;
-  transition: all .3s linear;
+  -webkit-transition: color .3s linear;
+  -moz-transition: color .3s linear;
+  -ms-transition: color .3s linear;
+  -o-transition: color .3s linear;
+  transition: color .3s linear;
 }
 
 a:after,
@@ -105,5 +100,17 @@ a:hover:before {
 
   a {
     width: auto;
+  }
+}
+
+@media (min-width: 40em) and (min-height: 20em) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media (min-width: 50em) and (min-height: 25em) {
+  html {
+    font-size: 150%;
   }
 }

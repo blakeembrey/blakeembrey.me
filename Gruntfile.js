@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-mincss');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   grunt.initConfig({
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
       }
     },
 
-    mincss: {
+    cssmin: {
       dist: {
         files: {
           'dist/public/css/main.css': 'dist/public/css/main.css'
@@ -57,5 +57,5 @@ module.exports = function (grunt) {
   });
 
   // Can't use any of the usemin handlers or preparation as it breaks task configs
-  grunt.registerTask('default', ['clean', 'copy', 'mincss', 'htmlmin']);
+  grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'htmlmin']);
 };
