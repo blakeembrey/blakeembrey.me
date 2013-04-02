@@ -2,16 +2,14 @@
   "name": "blakeembrey.me",
   "subdomain": "blakeembrey",
   "domains": [
-    "www.blakeembrey.com",
-    "www.blakeembrey.me",
-    "blakeembrey.com",
-    "blakeembrey.me"
+    "blakeembrey.me",
+    "www.blakeembrey.me"
   ],
   "scripts": {
     "predeploy": "grunt",
     "start": "node app"
   },
-  "version": "2.0.5-0",
+  "version": "2.0.6",
   "engines": {
     "node": "0.8.x"
   },
