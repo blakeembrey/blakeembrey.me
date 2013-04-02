@@ -6,21 +6,20 @@
     "www.blakeembrey.me"
   ],
   "scripts": {
-    "predeploy": "grunt",
-    "start": "node app"
+    "start": "node index.js"
   },
-  "version": "2.0.6",
+  "version": "2.0.7",
   "engines": {
     "node": "0.8.x"
   },
   "dependencies": {
-    "express": "~3.0.6"
+    "connect": "~2.7.4"
   },
-  "devDependencies": {
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-copy": "~0.4.0",
-    "grunt-contrib-htmlmin": "~0.1.1",
-    "grunt": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.5.0"
+  "devDependencies": {},
+  "author": "Blake Embrey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakeembrey/blakeembrey.me.git"
   }
 }
