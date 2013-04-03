@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "version": "2.0.7",
+  "version": "2.0.7-1",
   "engines": {
     "node": "0.8.x"
   },
