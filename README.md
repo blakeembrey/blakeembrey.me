@@ -1,3 +1,3 @@
 # blakeembrey.me
 
-Simple placeholder page
+Super simple placeholder page

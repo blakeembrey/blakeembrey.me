@@ -1,14 +1,14 @@
 var connect = require('connect');
 
 connect()
-  .use(connect.compress())
-  .use(connect.static('public'))
   .use(function (req, res, next) {
     var url = req.url,
     host    = req.headers.host;
-    if (host.substr(0, 4) === 'www.') {
-      return res.redirect(301, '//' + host.substr(4) + url);
+    if (host.slice(0, 4) === 'www.') {
+      return res.redirect(301, '//' + host.slice(4) + url);
     }
     next();
   })
+  .use(connect.compress())
+  .use(connect.static('public'))
   .listen(process.env.PORT || 3000);

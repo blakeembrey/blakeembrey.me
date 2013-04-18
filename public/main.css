@@ -9,7 +9,7 @@ body {
 
 html {
   font-size: 100%;
-  font-family: "Droid Serif", "Myriad Pro", "Georgia", serif;
+  font-family: Georgia, Times, "Times New Roman", serif;;
 }
 
 body {
@@ -27,14 +27,16 @@ body {
 }
 
 h1 {
+  display: block;
+  margin: 0;
+  padding: 0.3em 0;
+
   color: #f20f20;
   font-size: 4em;
   line-height: 1;
   font-weight: bold;
-
-  display: block;
-  margin: 0;
-  padding: 30px 0;
+  word-spacing: -0.25em;
+  text-transform: lowercase;
 
   border-bottom: 1px dotted #BBB;
 }
@@ -45,26 +47,26 @@ h1 span {
 }
 
 p {
-  margin: 30px 0;
-  font-size: 1.65em;
+  margin: 0.5em 0;
+  font-size: 1.8em;
   line-height: 1.8;
 }
 
 a {
-  display: inline-block;
   position: relative;
+
+  display: inline-block;
+  width: 100%;
 
   color: #000;
   text-transform: lowercase;
   text-decoration: none;
 
-  width: 100%;
-
-  -webkit-transition: color .3s linear;
-  -moz-transition: color .3s linear;
-  -ms-transition: color .3s linear;
-  -o-transition: color .3s linear;
-  transition: color .3s linear;
+  -webkit-transition: color 0.3s ease-in;
+  -moz-transition: color 0.3s ease-in;
+  -ms-transition: color 0.3s ease-in;
+  -o-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
 }
 
 a:after,
@@ -73,6 +75,12 @@ a:before {
   color: #000;
   opacity: 0;
   padding: 0 1px;
+
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -ms-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 
 a:after {
