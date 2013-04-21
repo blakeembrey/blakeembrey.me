@@ -5,7 +5,10 @@ connect()
     var url = req.url,
     host    = req.headers.host;
     if (host.slice(0, 4) === 'www.') {
-      return res.redirect(301, '//' + host.slice(4) + url);
+      res.writeHead(301, {
+        'Location': '//' + host.slice(4) + url
+      });
+      return res.end();
     }
     next();
   })
