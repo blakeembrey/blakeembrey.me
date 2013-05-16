@@ -1,3 +1,3 @@
 # blakeembrey.me
 
-Super simple placeholder page
+Simple placeholder page for GitHub pages.
