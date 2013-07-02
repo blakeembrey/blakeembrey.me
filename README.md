@@ -1,3 +1,3 @@
-# blakeembrey.me
+# Blake Embrey
 
-Simple placeholder page for GitHub pages.
+Simple landing page with other places to go.

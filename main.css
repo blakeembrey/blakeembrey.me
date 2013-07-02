@@ -9,7 +9,7 @@ body {
 
 html {
   font-size: 100%;
-  font-family: Georgia, Times, "Times New Roman", serif;;
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
 body {
@@ -96,7 +96,6 @@ a:hover:before {
   opacity: 1;
 }
 
-/* Desktop view overrides */
 @media (min-width: 30em) {
   h1 {
     display: inline-block;
