@@ -8,11 +8,9 @@ body {
 }
 
 html {
+  color: #111;
   font-size: 100%;
-  font-family: Georgia, Times, "Times New Roman", serif;
-}
-
-body {
+  font-family: Helvetica, Arial, sans-serif;
   background-color: #edf0f2;
 }
 
@@ -23,6 +21,16 @@ ul {
 
 ul {
   padding: 0 0 0 1em;
+}
+
+a {
+  color: #000;
+  border-bottom: 1px dotted #bbb;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f20;
 }
 
 .section-resume,
@@ -37,7 +45,7 @@ ul {
 
 .resume,
 .masterpiece {
-  padding: 15px;
+  padding: 1em;
 }
 
 .masterpiece {
@@ -45,6 +53,7 @@ ul {
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
+  font-family: Georgia, Times, "Times New Roman", serif;
   vertical-align: middle;
   /* Full shadow around each letter */
   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;
@@ -54,19 +63,17 @@ ul {
   display: block;
   margin: 0;
   padding: 0.3em 0;
-
   color: #f20;
   font-size: 4em;
   line-height: 1;
   font-weight: bold;
   word-spacing: -0.25em;
   text-transform: lowercase;
-
-  border-bottom: 1px dotted #BBB;
+  border-bottom: 1px dotted #bbb;
 }
 
 .masterpiece-title span {
-  color: #000;
+  color: #111;
   display: block;
 }
 
@@ -80,9 +87,8 @@ ul {
   display: inline-block;
   position: relative;
   width: 100%;
-  color: #000;
+  border-bottom: none;
   text-transform: lowercase;
-  text-decoration: none;
   -webkit-transition: color 0.3s ease-in;
   -moz-transition: color 0.3s ease-in;
   -ms-transition: color 0.3s ease-in;
@@ -93,7 +99,7 @@ ul {
 .masterpiece-link:after,
 .masterpiece-link:before {
   content: "{";
-  color: #000;
+  color: #111;
   opacity: 0;
   padding: 0 1px;
 
@@ -108,16 +114,12 @@ ul {
   content: "}";
 }
 
-.masterpiece-link:hover {
-  color: #f20;
-}
-
 .masterpiece-link:hover:after,
 .masterpiece-link:hover:before {
   opacity: 1;
 }
 
-@media (min-width: 34em) {
+@media (min-width: 33em) {
   .masterpiece-title {
     display: inline-block;
   }
@@ -151,15 +153,54 @@ ul {
 }
 
 /* Hide unwanted social links - these are for the print stylesheets */
-.link-email,
-.link-homepage,
-.link-location {
+.link-print {
   display: none;
 }
 
-.section-resume {
-  color: #000;
-  font-family: Helvetica, Arial, sans-serif;
+.section-social {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #fff;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 0.5em;
+  color: #777;
+  border-bottom: none;
+}
+
+.icon-facebook:hover {
+  color: #3b5998;
+}
+
+.icon-twitter:hover {
+  color: #00aced;
+}
+
+.icon-gplus:hover {
+  color: #dd4b39;
+}
+
+.icon-linkedin:hover {
+  color: #007bb6;
+}
+
+.icon-github:hover {
+  color: #4183c4;
+}
+
+.icon-lastfm:hover {
+  color: #ca392c;
+}
+
+.icon-link:hover {
+  color: #12c;
+}
+
+.icon-angellist:hover {
+  color: #272829;
 }
 
 .resume {
@@ -178,7 +219,7 @@ ul {
 .resume-title span {
   color: #edf0f2;
   padding: 4px 8px;
-  background-color: #000;
+  background-color: #111;
 }
 
 .resume-content {
@@ -187,7 +228,7 @@ ul {
 
 .resume-subsection {
   display: block;
-  padding: 10px 0 10px 15px;
+  padding: 0.7em 0 0.7em 1em;
   border-left: 4px solid;
   margin-bottom: 1.5em;
 }
@@ -195,21 +236,25 @@ ul {
 .resume-subsection-title,
 .resume-subsection-duration {
   font-size: 1.1em;
-  text-transform: uppercase;
+}
+
+.resume-subsection-title,
+.resume-subsection-company {
+  display: block;
+  margin: 0 0 0.5em;
 }
 
 .resume-subsection-title {
-  margin: 0 0 0.5em;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .resume-subsection-duration {
   float: right;
-  margin-left: 5px;
+  margin-left: 0.35em;
 }
 
 .resume-subsection-company {
-  display: block;
   font-style: italic;
 }
 
@@ -236,15 +281,19 @@ ul {
 
 /* When printing, we need to compact some of the interface and reset the colors */
 @media print {
+  .section {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .section-social {
+    display: none;
+  }
+
   .masterpiece,
   .section-masterpiece {
     display: block;
     min-height: auto;
-    background-color: #fff;
-  }
-
-  .masterpiece {
-    color: #000;
     font-family: Helvetica, Arial, sans-serif;
     text-shadow: none;
   }
@@ -254,7 +303,7 @@ ul {
     padding: 0;
     float: left;
     color: #000;
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: left;
     border-bottom: none;
     text-transform: uppercase;
@@ -272,49 +321,17 @@ ul {
     text-align: right;
   }
 
-  .masterpiece-link {
+  .masterpiece-link,
+  .masterpiece-link:after,
+  .masterpiece-link:before {
     display: none;
     text-transform: none;
     font-weight: normal;
   }
 
-  .masterpiece-link:after,
-  .masterpiece-link:before {
-    content: "";
-    opacity: 1;
-  }
-
-  .masterpiece-link:after {
-    position: relative;
-    top: 3px;
-    display: inline-block;
-    margin-left: 5px;
-    width: 16px;
-    height: 16px;
-  }
-
-  .link-location:after {
-    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABMUlEQVR4XpWSTW6DQAyFTQRIWaBEbFgg0cAqGwTcgKPkBu0NmtwgR+Ao3AAiNuxKOQAlYsGGn3okKyFWaOgnWaOZsR8PjyVgBEHwicsBYwd3CowoSZITMG4CrutuJEmKcePDPOk4jmGWZVcgZCCGYXhVDHQv8oIHB/v9Xtg+wnKOeZ6fbg66rjugfZhQY3zgWYGWfRLfAoFnokf3fti2PU7DcZx3mCD2PAcI2bKst77vgREDQQ5TmEEuy/LbNM1nzboAgR/wZwUooWDvfjYMY0tOQrznDS64QMReQRSfYZ6IDxLoup6Q9VekVVUFzwYpXDBM6Wq1Ctko39E0bYMiBf0Cp8biXdM010cBxnq99nBQYiZS41CFbdteYAmqqnqKovxgjGIVe/gvaNfD+ML4s/gXAyt2sIA5M0AAAAAASUVORK5CYII=);
-  }
-
-  .link-email:after {
-    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA2ElEQVQ4jaXTP0oDURDH8c9uYZGAhV7B3EGvYYKF+KcPeAjxFClsrAQhBwgIXkAPoX3AxAgS41rsPFhlCZvsDx5vmJnvzPD+0FIZTnCJnQ3ZL9xmWKCz5QDvOcZbwjBJxnlMUjRcC1wk+Dj2Q7w1gF9xFExfOO/QxS5Ga+BR5HSD+VYJvqAXlc8wrcSmOI3YAZ7D/6dAgQ9cKa93Hze4xl74hphX8lf/C6T1VJkmdX2syVtlYdRpiYewB+of2s+6Ak1U5C1gkOOzBT9Ln6mvPOVNVOC+RfNSv/3xUfwA8KQ0AAAAAElFTkSuQmCC);
-  }
-
-  .link-homepage:after {
-    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABj0lEQVR4Xo1SS4rCQBCdRPGzkfgBF6JGRBBEo17A3GCOoN7AG5gjzA2SI8wNzBxA0IV7d6KCEwRRVOipl+kOPcP0aEFRVbx+1Xmv8/JMWJY17fV6TCRmgWmPyK1Wy6Uy+gPyVqvV+N8FjUbD1TQtJFN1qCwYYxOqNnDqHSW5Wq0OTNNkyFqtNpQxmmcCU0oolUrQ6eALisWiT70xn8+XHHul8o5eVy243W5IL5vNvtzv9zX1i3a7bQG7Xq9djv80sd/vD4S+IAj8WCxm6rrukdYQp97cbDY2+eEJX6IFnU4nchsHDoeDL5MhZbfbYQnICO90On2/QrPZlN2e7Pf74DeZFtryBSRjHPb1ej00Sxzcbre4eS2TMZMkLED4hH1EuiuVCuM5xZxKpaxEIsGQyWRyWC6X3RBThM7dhLMLAJfLZUkzXDYNw8ALjIArI5/PM54zGcjlckOBFQqFgYqvZTKZyAPSBn1vpLtL6Qi3j8fjWLkAJZ1Ou0QcyYBw+3w+g/w44vH4lH4cxvMT8zO8L2vpwAUoCAapAAAAAElFTkSuQmCC);
-  }
-
   /* Show the links for printing */
-  .link-email,
-  .link-homepage,
-  .link-location {
+  .link-print {
     display: block;
-  }
-
-  .resume {
-    color: #000;
-    background-color: #fff;
   }
 
   .resume-title {
@@ -324,10 +341,22 @@ ul {
   .resume-title span {
     color: #f20;
     padding: 0;
+    background-color: transparent;
+  }
+
+  /* Squash all the padding down, have to squeeze it all onto a single page */
+  .resume-subsection {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+  }
+
+  .resume-subsection-title,
+  .resume-subsection-company {
+    margin-bottom: 0.4em;
   }
 
   .resume-subsection p,
   .resume-subsection ul {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
   }
 }
