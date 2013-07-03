@@ -1,3 +1,3 @@
 # Blake Embrey
 
-Simple landing page with other places to go.
+Landing page and location portal for Blake Embrey, doubles as a single page printable resume.

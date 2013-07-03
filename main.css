@@ -13,25 +13,49 @@ html {
 }
 
 body {
-  display: table;
   background-color: #edf0f2;
+}
+
+p,
+ul {
+  margin: 0 0 0.5em;
+}
+
+ul {
+  padding: 0 0 0 1em;
+}
+
+.section-resume,
+.section-masterpiece {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.section-masterpiece {
+  display: table;
+}
+
+.resume,
+.masterpiece {
+  padding: 15px;
 }
 
 .masterpiece {
   display: table-cell;
-  padding: 0 10px;
+  padding-top: 0;
+  padding-bottom: 0;
   text-align: center;
+  vertical-align: middle;
   /* Full shadow around each letter */
   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;
-  vertical-align: middle;
 }
 
-h1 {
+.masterpiece-title {
   display: block;
   margin: 0;
   padding: 0.3em 0;
 
-  color: #f20f20;
+  color: #f20;
   font-size: 4em;
   line-height: 1;
   font-weight: bold;
@@ -41,27 +65,24 @@ h1 {
   border-bottom: 1px dotted #BBB;
 }
 
-h1 span {
+.masterpiece-title span {
   color: #000;
   display: block;
 }
 
-p {
+.masterpiece-social {
   margin: 0.5em 0;
   font-size: 1.8em;
   line-height: 1.8;
 }
 
-a {
-  position: relative;
-
+.masterpiece-link {
   display: inline-block;
+  position: relative;
   width: 100%;
-
   color: #000;
   text-transform: lowercase;
   text-decoration: none;
-
   -webkit-transition: color 0.3s ease-in;
   -moz-transition: color 0.3s ease-in;
   -ms-transition: color 0.3s ease-in;
@@ -69,8 +90,8 @@ a {
   transition: color 0.3s ease-in;
 }
 
-a:after,
-a:before {
+.masterpiece-link:after,
+.masterpiece-link:before {
   content: "{";
   color: #000;
   opacity: 0;
@@ -83,41 +104,209 @@ a:before {
   transition: opacity 0.3s ease-in;
 }
 
-a:after {
+.masterpiece-link:after {
   content: "}";
 }
 
-a:hover {
-  color: #f20f20;
+.masterpiece-link:hover {
+  color: #f20;
 }
 
-a:hover:after,
-a:hover:before {
+.masterpiece-link:hover:after,
+.masterpiece-link:hover:before {
   opacity: 1;
 }
 
+/* Hide unwanted social links - these are for the print stylesheets */
+.link-email,
+.link-homepage,
+.link-location {
+  display: none;
+}
+
 @media (min-width: 30em) {
-  h1 {
+  .masterpiece-title {
     display: inline-block;
   }
 
-  h1 span {
+  .masterpiece-title span {
     display: inline;
   }
 
-  a {
+  .masterpiece-social {
     width: auto;
   }
 }
 
-@media (min-width: 40em) and (min-height: 20em) {
-  html {
-    font-size: 125%;
+.section-resume {
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f20;
+}
+
+.resume {
+  font-size: 0.85em;
+}
+
+.resume-title {
+  margin: 0 0 0.8em;
+  font-size: 1.5em;
+  border-bottom: 4px solid;
+  text-transform: uppercase;
+}
+
+.resume-title span {
+  color: #f20;
+  padding: 4px 8px;
+  background-color: #fff;
+}
+
+.resume-content {
+  text-align: left;
+}
+
+.resume-subsection {
+  display: block;
+  padding: 10px 0 10px 15px;
+  border-left: 4px solid;
+  margin-bottom: 1.5em;
+}
+
+.resume-subsection-title,
+.resume-subsection-duration {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.resume-subsection-title {
+  margin: 0 0 0.5em;
+  font-weight: bold;
+}
+
+.resume-subsection-duration {
+  float: right;
+  margin-left: 5px;
+}
+
+.resume-subsection-company {
+  display: block;
+  font-style: italic;
+}
+
+@media print, (min-width: 40em) {
+  .resume-content {
+    float: left;
+    width: 48%;
+  }
+
+  .resume-content + .resume-content {
+    margin-left: 4%;
   }
 }
 
-@media (min-width: 50em) and (min-height: 25em) {
-  html {
-    font-size: 150%;
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* When printing, we need to compact some of the interface and reset the colors */
+@media print {
+  .masterpiece,
+  .section-masterpiece {
+    display: block;
+    min-height: auto;
+    background-color: #fff;
+  }
+
+  .masterpiece {
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    text-shadow: none;
+  }
+
+  .masterpiece-title {
+    margin: 0;
+    padding: 0;
+    float: left;
+    color: #000;
+    font-size: 2.5em;
+    text-align: left;
+    border-bottom: none;
+    text-transform: uppercase;
+  }
+
+  .masterpiece-title span {
+    display: block;
+  }
+
+  .masterpiece-social {
+    float: right;
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.5;
+    text-align: right;
+  }
+
+  .masterpiece-link {
+    display: none;
+    text-transform: none;
+    font-weight: normal;
+  }
+
+  .masterpiece-link:after,
+  .masterpiece-link:before {
+    content: "";
+    opacity: 1;
+  }
+
+  .masterpiece-link:after {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .link-location:after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABMUlEQVR4XpWSTW6DQAyFTQRIWaBEbFgg0cAqGwTcgKPkBu0NmtwgR+Ao3AAiNuxKOQAlYsGGn3okKyFWaOgnWaOZsR8PjyVgBEHwicsBYwd3CowoSZITMG4CrutuJEmKcePDPOk4jmGWZVcgZCCGYXhVDHQv8oIHB/v9Xtg+wnKOeZ6fbg66rjugfZhQY3zgWYGWfRLfAoFnokf3fti2PU7DcZx3mCD2PAcI2bKst77vgREDQQ5TmEEuy/LbNM1nzboAgR/wZwUooWDvfjYMY0tOQrznDS64QMReQRSfYZ6IDxLoup6Q9VekVVUFzwYpXDBM6Wq1Ctko39E0bYMiBf0Cp8biXdM010cBxnq99nBQYiZS41CFbdteYAmqqnqKovxgjGIVe/gvaNfD+ML4s/gXAyt2sIA5M0AAAAAASUVORK5CYII=);
+  }
+
+  .link-email:after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA2ElEQVQ4jaXTP0oDURDH8c9uYZGAhV7B3EGvYYKF+KcPeAjxFClsrAQhBwgIXkAPoX3AxAgS41rsPFhlCZvsDx5vmJnvzPD+0FIZTnCJnQ3ZL9xmWKCz5QDvOcZbwjBJxnlMUjRcC1wk+Dj2Q7w1gF9xFExfOO/QxS5Ga+BR5HSD+VYJvqAXlc8wrcSmOI3YAZ7D/6dAgQ9cKa93Hze4xl74hphX8lf/C6T1VJkmdX2syVtlYdRpiYewB+of2s+6Ak1U5C1gkOOzBT9Ln6mvPOVNVOC+RfNSv/3xUfwA8KQ0AAAAAElFTkSuQmCC);
+  }
+
+  .link-homepage:after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABj0lEQVR4Xo1SS4rCQBCdRPGzkfgBF6JGRBBEo17A3GCOoN7AG5gjzA2SI8wNzBxA0IV7d6KCEwRRVOipl+kOPcP0aEFRVbx+1Xmv8/JMWJY17fV6TCRmgWmPyK1Wy6Uy+gPyVqvV+N8FjUbD1TQtJFN1qCwYYxOqNnDqHSW5Wq0OTNNkyFqtNpQxmmcCU0oolUrQ6eALisWiT70xn8+XHHul8o5eVy243W5IL5vNvtzv9zX1i3a7bQG7Xq9djv80sd/vD4S+IAj8WCxm6rrukdYQp97cbDY2+eEJX6IFnU4nchsHDoeDL5MhZbfbYQnICO90On2/QrPZlN2e7Pf74DeZFtryBSRjHPb1ej00Sxzcbre4eS2TMZMkLED4hH1EuiuVCuM5xZxKpaxEIsGQyWRyWC6X3RBThM7dhLMLAJfLZUkzXDYNw8ALjIArI5/PM54zGcjlckOBFQqFgYqvZTKZyAPSBn1vpLtL6Qi3j8fjWLkAJZ1Ou0QcyYBw+3w+g/w44vH4lH4cxvMT8zO8L2vpwAUoCAapAAAAAElFTkSuQmCC);
+  }
+
+  /* Show the links for printing */
+  .link-email,
+  .link-homepage,
+  .link-location {
+    display: block;
+  }
+
+  .resume {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .resume-title {
+    border-bottom: none;
+  }
+
+  .resume-title span {
+    padding: 0;
+  }
+
+  .resume-subsection p,
+  .resume-subsection ul {
+    margin-bottom: 0.3em;
   }
 }
