@@ -239,7 +239,7 @@ a:hover {
 }
 
 .resume-subsection-title,
-.resume-subsection-company {
+.resume-subsection-subtitle {
   display: block;
   margin: 0 0 0.5em;
 }
@@ -254,7 +254,7 @@ a:hover {
   margin-left: 0.35em;
 }
 
-.resume-subsection-company {
+.resume-subsection-subtitle {
   font-style: italic;
 }
 
@@ -348,15 +348,13 @@ a:hover {
   .resume-subsection {
     padding-top: 0.4em;
     padding-bottom: 0.4em;
-  }
-
-  .resume-subsection-title,
-  .resume-subsection-company {
-    margin-bottom: 0.4em;
+    margin-bottom: 1.2em;
   }
 
   .resume-subsection p,
-  .resume-subsection ul {
+  .resume-subsection ul,
+  .resume-subsection-title,
+  .resume-subsection-subtitle {
     margin-bottom: 0.2em;
   }
 }
