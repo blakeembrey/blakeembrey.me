@@ -117,14 +117,7 @@ ul {
   opacity: 1;
 }
 
-/* Hide unwanted social links - these are for the print stylesheets */
-.link-email,
-.link-homepage,
-.link-location {
-  display: none;
-}
-
-@media (min-width: 30em) {
+@media (min-width: 34em) {
   .masterpiece-title {
     display: inline-block;
   }
@@ -133,9 +126,35 @@ ul {
     display: inline;
   }
 
-  .masterpiece-social {
+  .masterpiece-link {
+    display: inline;
     width: auto;
   }
+}
+
+@media (min-width: 38em) {
+  .masterpiece {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 42em) {
+  .masterpiece {
+    font-size: 140%;
+  }
+}
+
+@media (min-width: 44em) {
+  .masterpiece {
+    font-size: 150%;
+  }
+}
+
+/* Hide unwanted social links - these are for the print stylesheets */
+.link-email,
+.link-homepage,
+.link-location {
+  display: none;
 }
 
 .section-resume {
@@ -146,6 +165,8 @@ ul {
 
 .resume {
   font-size: 0.85em;
+  margin: 0 auto;
+  max-width: 80em;
 }
 
 .resume-title {
