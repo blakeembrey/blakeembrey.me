@@ -158,9 +158,8 @@ ul {
 }
 
 .section-resume {
-  color: #fff;
+  color: #000;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #f20;
 }
 
 .resume {
@@ -177,9 +176,9 @@ ul {
 }
 
 .resume-title span {
-  color: #f20;
+  color: #edf0f2;
   padding: 4px 8px;
-  background-color: #fff;
+  background-color: #000;
 }
 
 .resume-content {
@@ -323,6 +322,7 @@ ul {
   }
 
   .resume-title span {
+    color: #f20;
     padding: 0;
   }
 
