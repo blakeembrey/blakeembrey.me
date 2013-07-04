@@ -25,7 +25,7 @@ ul {
 
 a {
   color: #000;
-  border-bottom: 1px dotted #bbb;
+  border-bottom: 1px dashed #aaa;
   text-decoration: none;
 }
 
@@ -60,6 +60,7 @@ a:hover {
 }
 
 .masterpiece-title {
+  position: relative;
   display: block;
   margin: 0;
   padding: 0.3em 0;
@@ -67,14 +68,23 @@ a:hover {
   font-size: 4em;
   line-height: 1;
   font-weight: bold;
-  word-spacing: -0.25em;
   text-transform: lowercase;
-  border-bottom: 1px dotted #bbb;
+  border-bottom: 1px dashed #aaa;
+}
+
+/* Create a subtle double layered border effect to give some depth */
+.masterpiece-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  display: block;
+  border-bottom: 1px dashed #fff;
 }
 
 .masterpiece-title span {
   color: #111;
-  display: block;
 }
 
 .masterpiece-social {
@@ -124,8 +134,8 @@ a:hover {
     display: inline-block;
   }
 
-  .masterpiece-title span {
-    display: inline;
+  .masterpiece-title br {
+    display: none;
   }
 
   .masterpiece-link {
@@ -160,14 +170,18 @@ a:hover {
 .section-social {
   padding: 0.5em;
   margin-bottom: 2em;
+  color: #aaa;
   text-align: center;
+  border-top: 1px dashed;
+  border-bottom: 1px dashed;
   background-color: #fff;
 }
 
 .social-link {
   display: inline-block;
   padding: 0.5em;
-  color: #777;
+  /* Remove link styles */
+  color: inherit;
   border-bottom: none;
 }
 
@@ -286,7 +300,8 @@ a:hover {
     background-color: #fff;
   }
 
-  .section-social {
+  .section-social,
+  .masterpiece-title:after {
     display: none;
   }
 
@@ -309,7 +324,7 @@ a:hover {
     text-transform: uppercase;
   }
 
-  .masterpiece-title span {
+  .masterpiece-title br {
     display: block;
   }
 
