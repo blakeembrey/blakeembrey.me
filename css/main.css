@@ -285,12 +285,12 @@ a:hover {
 
 .cf:before,
 .cf:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 .cf:after {
-    clear: both;
+  clear: both;
 }
 
 /* When printing, we need to compact some of the interface and reset the colors */
