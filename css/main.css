@@ -45,7 +45,9 @@ a:hover {
 
 .resume,
 .masterpiece {
-  padding: 1em;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 960px;
 }
 
 .masterpiece {
@@ -218,9 +220,7 @@ a:hover {
 }
 
 .resume {
-  font-size: 0.85em;
-  margin: 0 auto;
-  max-width: 80em;
+  font-size: 0.9em;
 }
 
 .resume-title {
@@ -295,6 +295,13 @@ a:hover {
 
 /* When printing, we need to compact some of the interface and reset the colors */
 @media print {
+  /* Set the html and body height back to auto to avoid phantom second page in print */
+  html,
+  body {
+    width: auto;
+    height: auto;
+  }
+
   .section {
     color: #000;
     background-color: #fff;
@@ -308,7 +315,7 @@ a:hover {
   .masterpiece,
   .section-masterpiece {
     display: block;
-    min-height: auto;
+    min-height: 0;
     font-family: Helvetica, Arial, sans-serif;
     text-shadow: none;
   }
@@ -344,6 +351,10 @@ a:hover {
     font-weight: normal;
   }
 
+  .masterpiece-link .icon {
+    color: inherit;
+  }
+
   /* Show the links for printing */
   .link-print {
     display: block;
@@ -363,13 +374,13 @@ a:hover {
   .resume-subsection {
     padding-top: 0.4em;
     padding-bottom: 0.4em;
-    margin-bottom: 1.2em;
+    margin-bottom: 1em;
   }
 
   .resume-subsection p,
   .resume-subsection ul,
   .resume-subsection-title,
   .resume-subsection-subtitle {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.3em;
   }
 }
