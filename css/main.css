@@ -302,6 +302,13 @@ a:hover {
     height: auto;
   }
 
+  .resume,
+  .masterpiece {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .section {
     color: #000;
     background-color: #fff;
@@ -347,8 +354,8 @@ a:hover {
   .masterpiece-link:after,
   .masterpiece-link:before {
     display: none;
-    text-transform: none;
     font-weight: normal;
+    text-transform: none;
   }
 
   .masterpiece-link .icon {
@@ -381,6 +388,6 @@ a:hover {
   .resume-subsection ul,
   .resume-subsection-title,
   .resume-subsection-subtitle {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.35em;
   }
 }
