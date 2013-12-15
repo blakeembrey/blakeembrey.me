@@ -1,3 +1,9 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -33,27 +39,37 @@ a:hover {
   color: #f20;
 }
 
-.section-resume,
-.section-masterpiece {
+.section-table {
+  display: table;
   min-width: 100%;
   min-height: 100%;
 }
 
-.section-masterpiece {
-  display: table;
+.section-row {
+  display: table-row;
 }
 
-.resume,
-.masterpiece {
+.section-cell {
+  display: table-cell;
+}
+
+.print-link,
+.section-resume {
+  display: none;
+}
+
+.section-table,
+.section-resume {
   margin: 0 auto;
-  padding: 15px;
   max-width: 960px;
 }
 
+.masterpiece-container {
+  height: 100%;
+}
+
 .masterpiece {
-  display: table-cell;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 15px;
   text-align: center;
   font-family: Georgia, Times, "Times New Roman", serif;
   vertical-align: middle;
@@ -164,58 +180,50 @@ a:hover {
   }
 }
 
-/* Hide unwanted social links - these are for the print stylesheets */
-.link-print {
-  display: none;
-}
-
-.section-social {
-  padding: 0.5em;
-  margin-bottom: 2em;
+.social .section-cell {
   color: #aaa;
   text-align: center;
   border-top: 1px dashed;
-  border-bottom: 1px dashed;
   background-color: #fff;
 }
 
 .social-link {
   display: inline-block;
-  padding: 0.5em;
-  /* Remove link styles */
+  padding: 0.8em;
+  /* Removes link styles */
   color: inherit;
   border-bottom: none;
 }
 
-.icon-facebook:hover {
+.social-link.icon-facebook:hover {
   color: #3b5998;
 }
 
-.icon-twitter:hover {
+.social-link.icon-twitter:hover {
   color: #00aced;
 }
 
-.icon-gplus:hover {
+.social-link.icon-gplus:hover {
   color: #dd4b39;
 }
 
-.icon-linkedin:hover {
+.social-link.icon-linkedin:hover {
   color: #007bb6;
 }
 
-.icon-github:hover {
+.social-link.icon-github:hover {
   color: #4183c4;
 }
 
-.icon-lastfm:hover {
+.social-link.icon-lastfm:hover {
   color: #ca392c;
 }
 
-.icon-link:hover {
+.social-link.icon-link:hover {
   color: #12c;
 }
 
-.icon-angellist:hover {
+.social-link.icon-angellist:hover {
   color: #272829;
 }
 
@@ -224,32 +232,35 @@ a:hover {
 }
 
 .resume-title {
-  margin: 0 0 0.8em;
-  font-size: 1.5em;
-  border-bottom: 4px solid;
+  color: #f20;
+  margin: 0 0 0.5em;
+  font-size: 1.6em;
   text-transform: uppercase;
 }
 
-.resume-title span {
-  color: #edf0f2;
-  padding: 4px 8px;
-  background-color: #111;
-}
-
 .resume-content {
+  padding: 15px;
   text-align: left;
 }
 
 .resume-subsection {
   display: block;
-  padding: 0.7em 0 0.7em 1em;
+  padding: 0.3em 0 0.3em 0.8em;
+  margin-bottom: 1em;
+  font-size: 0.95em;
   border-left: 4px solid;
-  margin-bottom: 1.5em;
+}
+
+.resume-subsection p,
+.resume-subsection ul,
+.resume-subsection-title,
+.resume-subsection-subtitle {
+  margin-bottom: 0.35em;
 }
 
 .resume-subsection-title,
 .resume-subsection-duration {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .resume-subsection-title,
@@ -275,11 +286,7 @@ a:hover {
 @media print, (min-width: 40em) {
   .resume-content {
     float: left;
-    width: 48%;
-  }
-
-  .resume-content + .resume-content {
-    margin-left: 4%;
+    width: 50%;
   }
 }
 
@@ -293,38 +300,44 @@ a:hover {
   clear: both;
 }
 
-/* When printing, we need to compact some of the interface and reset the colors */
+/* When printing, we need to compact some of the interface and restructure to a resume */
 @media print {
-  /* Set the html and body height back to auto to avoid phantom second page in print */
+  /* Set html and body height to `auto` to avoid phantom second page in print */
   html,
   body {
     width: auto;
     height: auto;
   }
 
-  .resume,
-  .masterpiece {
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .section {
+  html {
     color: #000;
     background-color: #fff;
   }
 
-  .section-social,
-  .masterpiece-title:after {
-    display: none;
+  .resume,
+  .masterpiece {
+    max-width: none;
+    padding-bottom: 0;
   }
 
-  .masterpiece,
-  .section-masterpiece {
+  .section-row,
+  .section-cell,
+  .section-table {
     display: block;
     min-height: 0;
     font-family: Helvetica, Arial, sans-serif;
     text-shadow: none;
+  }
+
+  .print-link,
+  .section-resume {
+    display: block;
+  }
+
+  .social,
+  .masterpiece-link,
+  .masterpiece-title:after {
+    display: none;
   }
 
   .masterpiece-title {
@@ -332,7 +345,7 @@ a:hover {
     padding: 0;
     float: left;
     color: #000;
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: left;
     border-bottom: none;
     text-transform: uppercase;
@@ -348,46 +361,5 @@ a:hover {
     font-size: 0.8em;
     line-height: 1.5;
     text-align: right;
-  }
-
-  .masterpiece-link,
-  .masterpiece-link:after,
-  .masterpiece-link:before {
-    display: none;
-    font-weight: normal;
-    text-transform: none;
-  }
-
-  .masterpiece-link .icon {
-    color: inherit;
-  }
-
-  /* Show the links for printing */
-  .link-print {
-    display: block;
-  }
-
-  .resume-title {
-    border-bottom: none;
-  }
-
-  .resume-title span {
-    color: #f20;
-    padding: 0;
-    background-color: transparent;
-  }
-
-  /* Squash all the padding down, have to squeeze it all onto a single page */
-  .resume-subsection {
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    margin-bottom: 1em;
-  }
-
-  .resume-subsection p,
-  .resume-subsection ul,
-  .resume-subsection-title,
-  .resume-subsection-subtitle {
-    margin-bottom: 0.35em;
   }
 }
