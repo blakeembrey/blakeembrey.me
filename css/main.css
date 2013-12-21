@@ -59,12 +59,6 @@ a:hover {
   display: none;
 }
 
-.section-table,
-.section-resume {
-  margin: 0 auto;
-  max-width: 960px;
-}
-
 .masterpiece-container {
   height: 100%;
 }
