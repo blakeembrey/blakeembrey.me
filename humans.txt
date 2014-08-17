@@ -21,7 +21,7 @@
 
 /* SITE */
 
-	Last Updated: 2012/03/31
+	Last Updated: 2014/08/17
 	Languages: English
 	Standards: HTML5, CSS3
-	Software: Sublime Text 2, Git
+	Software: Sublime Text 3, Git
