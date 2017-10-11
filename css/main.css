@@ -17,6 +17,7 @@ html {
   color: #111;
   font-size: 100%;
   font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.2;
   background-color: #edf0f2;
 }
 
@@ -43,7 +44,6 @@ a:hover {
   display: table;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .section-row {
@@ -54,8 +54,8 @@ a:hover {
   display: table-cell;
 }
 
-.print-link,
-.section-resume {
+.resume,
+.resume-link {
   display: none;
 }
 
@@ -64,7 +64,7 @@ a:hover {
 }
 
 .masterpiece {
-  padding: 15px;
+  padding: 16px;
   text-align: center;
   font-family: Georgia, Times, "Times New Roman", serif;
   vertical-align: middle;
@@ -76,7 +76,7 @@ a:hover {
   position: relative;
   display: block;
   margin: 0;
-  padding: 0.3em 0;
+  padding: 16px 0;
   color: #f20;
   font-size: 4em;
   line-height: 1;
@@ -100,22 +100,18 @@ a:hover {
   color: #111;
 }
 
-.masterpiece-social {
+.masterpiece-links {
   margin: 0.5em 0;
   font-size: 1.8em;
-  line-height: 1.8;
 }
 
 .masterpiece-link {
   display: inline-block;
   position: relative;
   width: 100%;
+  margin-bottom: 4px;
   border-bottom: none;
   text-transform: lowercase;
-  -webkit-transition: color 0.3s ease-in;
-  -moz-transition: color 0.3s ease-in;
-  -ms-transition: color 0.3s ease-in;
-  -o-transition: color 0.3s ease-in;
   transition: color 0.3s ease-in;
 }
 
@@ -125,11 +121,6 @@ a:hover {
   color: #111;
   opacity: 0;
   padding: 0 1px;
-
-  -webkit-transition: opacity 0.3s ease-in;
-  -moz-transition: opacity 0.3s ease-in;
-  -ms-transition: opacity 0.3s ease-in;
-  -o-transition: opacity 0.3s ease-in;
   transition: opacity 0.3s ease-in;
 }
 
@@ -147,13 +138,8 @@ a:hover {
     display: inline-block;
   }
 
-  .masterpiece-title br {
-    display: none;
-  }
-
   .masterpiece-link {
     display: inline;
-    width: auto;
   }
 }
 
@@ -184,8 +170,8 @@ a:hover {
 
 .social-link {
   display: inline-block;
-  padding: 0.8em;
-  /* Removes link styles */
+  padding: 0.6em;
+  /* Remove <a> styles. */
   color: inherit;
   border-bottom: none;
 }
@@ -228,61 +214,63 @@ a:hover {
 
 .resume-title {
   color: #f20;
-  margin: 0 0 0.5em;
+  margin: 0 0 12px;
   font-size: 1.6em;
   text-transform: uppercase;
 }
 
-.resume-content {
-  padding: 15px;
-  text-align: left;
+.resume-section {
+  width: 50%;
+  padding-right: 4px;
+}
+
+.resume-section + .resume-section {
+  padding-left: 4px;
+}
+
+.resume-section:last-child {
+  padding-right: 0;
 }
 
 .resume-subsection {
   display: block;
-  padding: 0.3em 0 0.3em 0.8em;
-  margin-bottom: 1em;
-  font-size: 0.95em;
+  padding-left: 12px;
+  margin-bottom: 12px;
   border-left: 4px solid;
 }
 
-.resume-subsection p,
-.resume-subsection ul,
-.resume-subsection-title,
-.resume-subsection-subtitle {
-  margin-bottom: 0.35em;
+.resume-subsection:last-child {
+  margin-bottom: 0;
 }
 
-.resume-subsection-title,
-.resume-subsection-duration {
+.resume-subsection p,
+.resume-subsection ul {
+  margin-bottom: 4px;
+}
+
+.resume-subsection-title {
   font-size: 1.2em;
 }
 
 .resume-subsection-title,
-.resume-subsection-subtitle {
+.resume-subsection-subtitle,
+.resume-subsection-duration {
   display: block;
-  margin: 0 0 0.5em;
+  margin: 0 0 6px;
 }
 
 .resume-subsection-title {
   font-weight: bold;
-  text-transform: uppercase;
 }
 
-.resume-subsection-duration {
+.resume-subsection-location {
   float: right;
-  margin-left: 0.35em;
-}
-
-.resume-subsection-subtitle {
+  margin-left: 4px;
   font-style: italic;
 }
 
-@media print, (min-width: 40em) {
-  .resume-content {
-    float: left;
-    width: 50%;
-  }
+.resume-subsection-duration {
+  font-size: 0.95em;
 }
 
 .cf:before,
@@ -295,38 +283,33 @@ a:hover {
   clear: both;
 }
 
-/* When printing, we need to compact some of the interface and restructure to a resume */
 @media print {
-  /* Set html and body height to `auto` to avoid phantom second page in print */
-  html,
-  body {
-    width: auto;
-    height: auto;
-  }
-
   html {
     color: #000;
     background-color: #fff;
   }
 
+  .section-table {
+    height: auto;
+  }
+
   .resume,
   .masterpiece {
     max-width: none;
-    padding-bottom: 0;
-  }
-
-  .section-row,
-  .section-cell,
-  .section-table {
-    display: block;
-    min-height: 0;
-    font-family: Helvetica, Arial, sans-serif;
+    padding: 0 0 12px;
+    font-size: 100%;
+    font-family: inherit;
+    text-align: left;
     text-shadow: none;
   }
 
-  .print-link,
-  .section-resume {
-    display: block;
+  .resume {
+    display: table-row;
+  }
+
+  .resume-link {
+    display: inline-block;
+    margin-right: 4px;
   }
 
   .social,
@@ -336,25 +319,16 @@ a:hover {
   }
 
   .masterpiece-title {
-    margin: 0;
-    padding: 0;
-    float: left;
     color: #000;
-    font-size: 1.8em;
-    text-align: left;
+    font-size: 2em;
+    padding: 0 0 8px;
     border-bottom: none;
     text-transform: uppercase;
   }
 
-  .masterpiece-title br {
-    display: block;
-  }
-
-  .masterpiece-social {
-    float: right;
+  .masterpiece-links {
     margin: 0;
-    font-size: 0.8em;
-    line-height: 1.5;
-    text-align: right;
+    font-size: 0.9em;
+    font-weight: 400;
   }
 }
