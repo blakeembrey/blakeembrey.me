@@ -214,7 +214,7 @@ a:hover {
 
 .resume-title {
   color: #f20;
-  margin: 0 0 12px;
+  margin: 0 0 0.6em;
   font-size: 1.6em;
   text-transform: uppercase;
 }
@@ -234,8 +234,8 @@ a:hover {
 
 .resume-subsection {
   display: block;
-  padding-left: 12px;
-  margin-bottom: 12px;
+  padding-left: 1em;
+  margin-bottom: 1em;
   border-left: 4px solid;
 }
 
@@ -296,7 +296,7 @@ a:hover {
   .resume,
   .masterpiece {
     max-width: none;
-    padding: 0 0 12px;
+    padding: 0 0 1em;
     font-size: 100%;
     font-family: inherit;
     text-align: left;
@@ -320,10 +320,15 @@ a:hover {
 
   .masterpiece-title {
     color: #000;
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: normal;
     padding: 0 0 8px;
     border-bottom: none;
     text-transform: uppercase;
+  }
+
+  .masterpiece-title span {
+    font-weight: bolder;
   }
 
   .masterpiece-links {
